@@ -34,12 +34,22 @@
 // Esta línea trae tus clases del ejercicio 06
 const { Vehiculo, Alimentador, BusDual } = require("./06-tipos-de-vehiculo");
 
-function crearFlota() {
-  // Tu código aquí
+
+function crearFlota (){
+  const vehiculo1= new Vehiculo("RVT101", 40);
+  const vehiculo2=new Alimentador("ALM202", 25);
+  const vehiculo3=new BusDual("DUA303", 80, true);
+  let flota=[vehiculo1,vehiculo2,vehiculo3];
+  return flota;
 }
 
 function reporteFlota(flota) {
-  // Tu código aquí
+  let reporte=[];
+  for (const vehiculo of flota) {
+    reporte.push(vehiculo.reporte());
+  }
+  console.log(reporte);
+  return reporte;  
 }
 
 // No borres esta línea: es la puerta por donde el test usa tus funciones
